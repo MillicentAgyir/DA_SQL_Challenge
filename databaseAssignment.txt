@@ -1,0 +1,84 @@
+Wave's Schema:
+Assumption: Let's call the schema "transactions"
+The transaction schema was used to organize the following tables:
+1.Users 
+2.Transfers
+3.Agents
+4.AgentsTransactions
+5.Wallets
+
+
+Queries:
+1. SELECT COUNT(u_id)
+FROM transactions.users;
+
+2. SELECT COUNT(send_amount_currency)
+FROM transactions.transfers 
+WHERE send_amount_currency = 'CFA' ;
+
+3.SELECT COUNT (u_id)
+FROM transactions.transfers 
+WHERE send_amount_currency = 'CFA' ;
+
+4. SELECT COUNT (*) atx_id, DATE_PART('month',when_created) months_in_year_2018 
+FROM transactions.agent_transactions
+WHERE when_created BETWEEN '2018-01-01' AND '2018-12-31'
+GROUP BY 2
+ORDER BY 2 ASC;
+
+
+10.
+SELECT (source_wallet_id ),
+Sum (send_amount_scalar) as total_amount
+From transactions.transfers
+WHERE send_amount_currency = 'CFA' AND transfers.when_created > CURRENT_DATE - INTERVAL '1 month'
+Group by source_wallet_id
+
+
+
+SELECT users.u_id, transfers.send_amount_scalar,transfers.when_created
+FROM transactions.transfers
+INNER JOIN transactions.users ON transfers.u_id = users.u_id
+WHERE send_amount_currency = 'CFA'    
+AND send_amount_scalar>10000000 AND transfers.when_created > CURRENT_DATE - INTERVAL '1 month'
+
+
+Select Distinct (u_id),
+Sum (send_amount_scalar) as total_amount,
+Count (u_id) as total_per_user
+From transactions.transfers
+Group by u_id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gaylord Balcom
+Hosea Jack
+Vera Fuselier
+Kacy Poplar
+Scottie Wallen
+Deeanna Soukup
+Brant Dipaola
+Jeffie Parnell
+Monte Heilig
+Terrell Metzer
+Annelle Ziolkowski
+Lucila Tiger
+Marybelle Ensign
+Carmen Caylor
+Coretta Harriss
+Melida Waiters
+Darlene Mund
+Minta Lofton
+Roxie Galyean
+Theressa Hoaglin
