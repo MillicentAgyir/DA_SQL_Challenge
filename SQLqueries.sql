@@ -35,9 +35,6 @@ then 'withdrawer else 'depositer' END as agent_status, count(*)
 from agent_transactions WHERE when_created between
 (now()-'1week'::  interval) and now()
 
-6.
-7.
-
 
 8. Select transfers.kind As transfer_kind,
 wallets.ledger_location As country,
