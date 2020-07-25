@@ -1,6 +1,6 @@
 # DA_SQL_Challenge
 
-The file SQLqueries.sql contains queries which answers some questions about Wave's business.
+The file https://github.com/MillicentAgyir/DA_SQL_Challenge/blob/master/SQLqueries.sql contains queries which answers some questions about Wave's business.
 
 Tables and queries were created using the latest version of Postgresql.
 
