@@ -1,14 +1,6 @@
-Wave's Schema:
-Assumption: Let's call the schema "transactions"
-The transaction schema was used to organize the following tables:
-1.Users 
-2.Transfers
-3.Agents
-4.AgentsTransactions
-5.Wallets
 
 
-Queries:
+--Queries:
 1. SELECT COUNT(u_id)
 FROM transactions.users;
 
