@@ -68,10 +68,6 @@ WHERE (send_amount_currency = 'CFA' AND transfers.when_created > CURRENT_DATE - 
 Group by source_wallet_id;
 
 
-Select (source_wallet_id),
-Sum (send_amount_scalar)
-From transactions.transfers
-WHERE (send_amount_currency = 'CFA' AND transfers.when_created > CURRENT_DATE - INTERVAL '1 month')
-Group by source_wallet_id;
+
 
 
