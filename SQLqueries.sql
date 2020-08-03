@@ -25,7 +25,11 @@ then 'withdrawer else 'depositer' END as agent_status, count(*)
 from agent_transactions WHERE when_created between
 (now()-'1week'::  interval) and now();
 
-6.
+6.  select count (agent_transactions.atx_id) as "atx volume city summary", agents.city from transactions.agent_transactions
+   Left join transactions.agents on agents_transactions.agent_id = agents.agent_id
+ where
+   agent_transactions.when_created > = NOW()-INTERVAL '1 week'
+   group by agents.city;
 
 7. Select count (agent_transactions.atx_id) as "atx volume city summary",
 agents.city, agents.country from transactions.agent transactions
