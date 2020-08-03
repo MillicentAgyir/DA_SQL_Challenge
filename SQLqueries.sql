@@ -28,11 +28,11 @@ from agent_transactions WHERE when_created between
 6.
 
 7. Select count (agent_transactions.atx_id) as "atx volume city summary",
-    agents.city, agents.country from transactions.agent transactions
-    left join transactions.agents on agent_transactions.agent_id = agents.agent_id
+agents.city, agents.country from transactions.agent transactions
+left join transactions.agents on agent_transactions.agent_id = agents.agent_id
     where
-    agent_transactions.when_created > = NOW() - INTERVAL '1 week'
-    group by agents.city, agents.country;
+ agent_transactions.when_created > = NOW() - INTERVAL '1 week'
+ group by agents.city, agents.country;
 
 
 8. Select transfers.kind As transfer_kind,
